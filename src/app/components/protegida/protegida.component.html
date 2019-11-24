@@ -1,1 +1,18 @@
-<p>protegida works!</p>
+<h1>Perfil de usuario</h1>
+<hr>
+<!-- usa un pipe asincrono que espera la respuesta de auth.userProfile$ y lo asocia a un alias llamado profile -->
+<!-- pasa la respuesta por un pipe json y verlo -->
+<pre *ngIf="auth.userProfile$ | async as profile">
+    <code>{{ profile | json }}</code>
+</pre>
+<!-- 
+{
+    "nickname": "julianecheverri",
+    "name": "julianecheverri@outlook.com",
+    "picture": "https://s.gravatar.com/avatar/eb0bc77cbbf7c39f423aa704d0940a13?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fju.png",
+    "updated_at": "2019-11-24T21:53:54.173Z",
+    "email": "julianecheverri@outlook.com",
+    "email_verified": true,
+    "sub": "auth0|5ddaf64f7c61140efc78c4af"
+    sub es el id unico que puede ser usado para almacenar modificaciones en la bd
+  } -->
